@@ -56,16 +56,6 @@ class Application(tk.Frame):
         tree.show()
         self.tree = tree
 
-    def init_custom_tree(self):
-        root = TreeNode("root")
-
-        massa = root.add_child(TreeNode("Massa"))
-        massa.add_child(TreeNode("Macarrão"))
-
-        root.add_child(TreeNode("Bolo de Chocolate"))
-        root.print_tree()
-        self.custom_tree = root
-
     def run_through_tree(self, tree, last_node="root"):
         right_answer = False
         last_leaf = None
@@ -134,6 +124,16 @@ class Application(tk.Frame):
                 messagebox.showerror(
                     message=f"Comida não cadastrada, {food_type} ou {food_name} já existem"
                 )
+
+    def init_custom_tree(self):
+        root = TreeNode("root")
+
+        massa = root.add_child(TreeNode("Massa"))
+        massa.add_child(TreeNode("Macarrão"))
+
+        root.add_child(TreeNode("Bolo de Chocolate"))
+        root.print_tree()
+        self.custom_tree = root
 
     def run_through_tree2(self, tree, last_node=None):
         right_answer = False
